@@ -8,12 +8,62 @@
       width: 1300px;
       margin: 0 auto;
     }
+    .input-form,
+    .user-list {
+      width: 50%;
+    }
+    .input-form {
+      padding: 5px;
+      border: 1px solid #000b21;
+    }
+    .name-input {
+      margin-right: 10px;
+    }
+    .user-list {
+      padding: 10px 0 30px 5px;
+      list-style: none;
+    }
+    .user-wrapper {
+      padding: 5px;
+    }
+    .user-wrapper:hover {
+      background-color: rgba(166, 166, 166, 0.68);
+    }
+    .user-name {
+      margin-right: 10px;
+    }
+    .add-btn,
+    .user-edit-btn,
+    .user-delete-btn {
+      float: right;
+      margin-left: 10px;
+    }
   </style>
 </head>
 <body>
   <div id="app">
+    <form action="" class="input-form">
+      <label class="name-input">
+        Имя
+        <input type="text" class="input name-input">
+      </label>
+      <label class="phone-input">
+        Телефон
+        <input type="text" class="input phone-input">
+      </label>
+      <button type="submit" class="add-btn">Добавить</button>
+    </form>
+    <ul class="user-list">
+      <li class="user-wrapper">
+        <span class="user-name">Макс</span>
+        <span class="user-phone">123-321-222-1</span>
+        <button class="user-edit-btn">Edit</button>
+        <button class="user-delete-btn">Del</button>
+      </li>
+    </ul>
   </div>
   <script src="./underscore.js"></script>
+  <script src="jquery.js"></script>
   <script src="./backbone.js"></script>
   <script src="./script.js"></script>
 </body>
