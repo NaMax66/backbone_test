@@ -1,8 +1,8 @@
 @AppView = Backbone.View.extend
   el: '#app'
   events:
-    "keypress #phone-input": 'addNewUser'
-    "click #add_new_user-btn": 'addNewUser'
+    "keypress #phone-input": 'handleEvent'
+    "click #add_new_user-btn": 'handleEvent'
   initialize : ->
     this.$phoneInput = this.$('#phone-input')
     this.$userInput = this.$('#user-input')
@@ -20,8 +20,15 @@
     id: Math.floor(Math.random() * 10000)
 
 
+  handleEvent: () ->
+    if event.target.id == 'add_new_user-btn'
+      this.addNewUser()
+      event.preventDefault()
+    if event.key == 'Enter'
+      this.addNewUser()
+      return
+
   addNewUser: (event) ->
-    event.preventDefault()
     console.log(event, 'add new user')
     Users.create this.newUser()
     this.$phoneInput.val ""

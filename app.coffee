@@ -6,5 +6,4 @@ userView = new UserView {el, model: user}
 userView.render()###
 
 document.addEventListener 'DOMContentLoaded', () ->
-  console.log('The app has started')
   new AppView()
