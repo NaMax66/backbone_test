@@ -45,15 +45,15 @@
     <form action="" class="input-form">
       <label class="name-input">
         Имя
-        <input type="text" class="input name-input">
+        <input id="user_input" type="text" class="input name-input">
       </label>
       <label class="phone-input">
         Телефон
-        <input type="text" class="input phone-input">
+        <input id="phone-input" type="text" class="input phone-input">
       </label>
-      <button type="submit" class="add-btn">Добавить</button>
+      <button id="add_new_user-btn" type="submit" class="add-btn">Добавить</button>
     </form>
-    <ul class="user-list">
+  <ul id="user-list" class="user-list">
       <li class="user-wrapper">
         <span class="user-name">Макс</span>
         <span class="user-phone">123-321-222-1</span>
@@ -62,9 +62,12 @@
       </li>
     </ul>
   </div>
-  <script src="./underscore.js"></script>
-  <script src="jquery.js"></script>
-  <script src="./backbone.js"></script>
-  <script src="./script.js"></script>
+  <script src="lib/jquery.js"></script>
+  <script src="lib/underscore.js"></script>
+  <script src="lib/backbone.js"></script>
+  <script src="./models.js"></script>
+  <script src="./collections.js"></script>
+  <script src="./views.js"></script>
+  <script src="./app.js"></script>
 </body>
 </html>
