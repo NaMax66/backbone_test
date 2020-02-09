@@ -45,7 +45,7 @@
     <form action="" class="input-form">
       <label class="name-input">
         Имя
-        <input id="user_input" type="text" class="input name-input">
+        <input id="user-input" type="text" class="input name-input">
       </label>
       <label class="phone-input">
         Телефон
@@ -62,6 +62,15 @@
       </li>
     </ul>
   </div>
+  <script type="text/template" id="userTemplate">
+    <li class="user-wrapper">
+      <%= phone %>
+      <input class="user-name" value="1">
+      <input class="user-phone" value="2">
+      <button class="user-edit-btn">Edit</button>
+      <button class="user-delete-btn">Del</button>
+    </li>
+  </script>
   <script src="lib/jquery.js"></script>
   <script src="lib/underscore.js"></script>
   <script src="lib/backbone.js"></script>
