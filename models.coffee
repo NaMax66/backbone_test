@@ -1,6 +1,6 @@
 @User = Backbone.Model.extend
   defaults:
-    name: 'def'
+    user: 'def'
     phone: 'def'
   initialize: () ->
     if !this.get('name') and !this.get('phone')

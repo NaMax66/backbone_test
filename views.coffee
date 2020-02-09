@@ -7,7 +7,7 @@
     this.$phoneInput = this.$('#phone-input')
     this.$userInput = this.$('#user-input')
 
-    this.listenTo Users, "add", this.addOne
+    this.listenTo Users, "add", this.addUserToList
 
     ###Users.fetch()###
 
@@ -29,15 +29,16 @@
       return
 
   addNewUser: (event) ->
-    console.log(event, 'add new user')
     Users.create this.newUser()
+    this.$userInput.val ""
     this.$phoneInput.val ""
 
-
-
-
-
-
+  addUserToList: (user) ->
+    console.log('addToList')
+    view = new UserView({
+      model: user
+    });
+    return this.$("#user-list").append(view.render().el);
 
 
 
@@ -48,23 +49,11 @@
     'click' : 'isClicked'
   }
   initialize: ->
-    ###this.listenTo this.model, "change", this.render
-    this.listenTo this.model, "destroy", this.remove###
+    this.listenTo this.model, "change", this.render
+    this.listenTo this.model, "destroy", this.remove
   render: () ->
     console.log('rendering user')
     console.log(this.model.attributes)
     this.$el.html(this.template(this.model.attributes))
     this
-}
-
-AppView = Backbone.View.extend {
-  el: document.getElementById('app')
-  events: {
-    'click' : 'addUser'
-  }
-  initialize: () ->
-
-  addUser: (e) ->
-    e.preventDefault()
-    console.log('clicked')
 }
